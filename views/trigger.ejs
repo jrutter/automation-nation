@@ -1,0 +1,357 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reports | Automation Reporting</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>  </head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8G07DD98J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S8G07DD98J');
+</script>  
+
+<body>
+
+        <!-- ======= Header ======= -->
+    <header id="header" class="">
+      <div class="container d-flex align-items-center">
+        <h1 class="logo mr-auto">
+          <a href="/">Automation Nation</a>
+        </h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
+
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li ><a href="/">Home</a></li>
+            <% if(user){ %>
+            <li class="active"><a href="/trigger" class=" btn btn-default">Run GI Tests</a></li>
+            <li><a href="/reports" class="btn btn-default">Reports</a></li>
+            <li class="">
+              <a href="/status" class="btn btn-default active">Daily Status</a>
+            </li>
+            <li><a href="/logout" class="btn btn-default">Log out</a></li>
+            <% } else{ %>
+            <li><a href="/login" class="btn btn-default">Login</a></li>
+
+            <% } %>
+          </ul>
+        </nav>
+        <!-- .nav-menu -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+       <section id="about" class="about section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h3>Trigger Tests</h3>
+          <p>In order to run the tests, the file will need to be in the following format.</p>
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+  Sample File and Format
+</button>
+        </div>
+
+        <div class="row">
+          <form method="POST" action="/upload" enctype="multipart/form-data">
+
+          
+          <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            
+           <h4 class="">Which test suite do you want to run?</h4>
+
+           <table class="table">
+            <tr>
+              <th>Test Suite</th>
+              <th>Use Case</th>
+              <th>GI Link</th>
+              <th>Time per test</th>
+            </tr>
+            <tr>
+              <td> 
+                <div class="custom-control custom-radio"><input
+                type="radio"
+                id="customRadio1"
+                name="testSuite"
+                value="cart"
+                class="custom-control-input"
+              /> <label class="custom-control-label" for="customRadio1"
+                >LP - CART</label
+              ></div>
+            </td>
+            <td>Check if CART language is on Landing Pages for CA, NY, CT</td>
+              <td>
+                <a
+                  href="https://app.ghostinspector.com/tests/6046957b81917f79b87e8665"
+                  >Preview</a
+                >
+              </td>
+                <td>30 sec</td>
+            </tr>
+
+            <tr>
+              <td> 
+                <div class="custom-control custom-radio"><input
+                type="radio"
+                id="customRadio33"
+                name="testSuite"
+                value="lpTest"
+                class="custom-control-input"
+              /> <label class="custom-control-label" for="customRadio33"
+                >LP - Validate WD and Other Tests - Samba</label
+              ></div>
+            </td>
+            <td>Check for WD Modal, Cart Language</td>
+              <td>
+                <a
+                  href="https://app.ghostinspector.com/tests/619bdb2d2ee7e9fa161a63d4"
+                  >Preview</a
+                >
+              </td>
+                <td>25 sec</td>
+            </tr>
+
+            <tr>
+              <td> 
+                <div class="custom-control custom-radio"><input
+                type="radio"
+                id="customRadio2"
+                name="testSuite"
+                value="order"
+                class="custom-control-input"
+              /> <label class="custom-control-label" for="customRadio2"
+                >LP - Place Orders</label
+              ></div>
+            </td>
+              <td>Place a test order for all NON-WD States and validate Order Conf Page and Email. Use only if clean-up job in place. Places tons of orders!</td>
+
+              <td>
+                <a
+                  href="https://app.ghostinspector.com/tests/5f738dbbcb5e672cb321cab8"
+                  >Preview</a
+                >
+              </td>
+                <td>90 sec</td>
+            </tr>
+
+            <tr>
+              <td> 
+                <div class="custom-control custom-radio"><input
+                type="radio"
+                id="customRadio3"
+                name="testSuite"
+                value="validate"
+                class="custom-control-input"
+              /> <label class="custom-control-label" for="customRadio3"
+                >LP - Validate Products</label
+              ></div>
+            </td>
+            <td>Load up Landing Pages and validate that products are on the page</td>
+              <td>
+                <a
+                  href="https://app.ghostinspector.com/tests/605cf102bfd1192cd184c0a3"
+                  >Preview</a
+                >
+              </td>
+                <td>25 sec</td>
+            </tr>
+
+            
+            
+            
+            <!-- <tr>
+              <td> 
+                <div class="custom-control custom-radio"><input
+                type="radio"
+                id="customRadio4"
+                name="testSuite"
+                value="redirects"
+                class="custom-control-input"
+              /> <label class="custom-control-label" for="customRadio4"
+                >LP - Check Footers</label
+              ></div>
+            </td>
+            <td>Run through list of landing pages to check they have correct footers</td>
+              <td>
+                <a
+                  href="https://app.ghostinspector.com/tests/60416bb4251eef5ede5c7c2d"
+                  >Preview</a
+                >
+              </td>
+                <td>10 sec</td>
+            </tr> -->
+            <tr>
+              <td> 
+                <div class="custom-control custom-radio"><input
+                type="radio"
+                id="customRadio4"
+                name="testSuite"
+                value="redirects"
+                class="custom-control-input"
+              /> <label class="custom-control-label" for="customRadio4"
+                >URL Redirects</label
+              ></div>
+            </td>
+            <td>Run through list of URL redirects and check that are valid</td>
+              <td>
+                <a
+                  href="https://app.ghostinspector.com/tests/60416bb4251eef5ede5c7c2d"
+                  >Preview</a
+                >
+              </td>
+                <td>10 sec</td>
+            </tr>
+           </table> 
+        
+
+
+              <!-- <div class="custom-control custom-radio"><input
+                type="radio"
+                id="env1"
+                name="testEnvironment"
+                value="softlaunch"
+                class="custom-control-input"
+              /> <label class="custom-control-label" for="env1"
+                >Soft-Launch</label
+              ></div> -->
+
+               
+
+              <br>
+
+              <div class="row">
+                <!-- <div class="col form-group">
+    <label for="numOrders">Order Number Filter</label>
+    <input type="number" class="form-control" id="numOrders" aria-describedby="emailHelp" placeholder=""  name="numOrders">
+    <small id="emailHelp" class="form-text text-muted">This is required to filter the response codes, as there are some that may be junk/old. This ensures they are active.</small>
+                  </div> -->
+                <div class="col form-group">
+            <label for="formFile" class="form-label">CSV Input File</label>
+
+                  <input
+              class="form-control"
+              type="file"
+              id="formFile"
+              name="fileName"
+            />
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+  Sample File and Format
+</button>
+                </div>
+              </div>
+              <!-- <div class="form-group">
+                Which Environment
+                 <div class="custom-control custom-radio"><input
+                type="radio"
+                id="env2"
+                name="testEnvironment"
+                value="production"
+                class="custom-control-input"
+              /> <label class="custom-control-label" for="env2"
+                >Live</label
+              ></div>
+
+              </div> -->
+              
+              <!-- <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div> -->
+                      
+          
+            <button type="submit" class="btn btn-primary mt-3">
+              Trigger tests
+            </button>
+
+
+            
+          </form>
+          </div>
+         
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+
+    <div class="container main-content">
+      <div class="row">
+        <div class="col-sm mt-2">
+         
+        </div>
+
+        <div class="col-sm ml-5">
+          
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Input File Format</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>There should be a CSV file with following column names.</p>
+            <ul>
+              <li>DWUS_BrandId (4S, WSJ or VIRGIN)</li>
+              <li>AX_RESPONSE_CODE</li>
+              <li>NAME</li>
+              <li>ATG_Start_Date</li>
+              <li>ATG_End_Date</li>
+              <li>Orders</li>
+            </ul>
+            <a href="/sample_input.csv">Download Sample<a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+           
+        </div>
+      </div>
+    </div>
+
+ <footer id="footer" class="fixed-bottom">
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Automation Nation</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+   
+  </body>
+</html>

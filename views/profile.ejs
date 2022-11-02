@@ -1,0 +1,54 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile - Automation Reporting</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="/css/main.css" /> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-S8G07DD98J"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-S8G07DD98J");
+    </script>
+  </head>
+  <body>
+    <div
+      class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow"
+    >
+      <h5 class="my-0 mr-md-auto font-weight-normal logo">
+        <a href="/">Automation Nation</a>
+      </h5>
+      <% if(user){ %>
+      <a href="/trigger" class="btn btn-default">Run GI Tests</a>
+      <a href="/profile" class="btn btn-default">Settings</a>
+      <a href="/logout" class="btn btn-default">Log out</a>
+      <% } else{ %>
+      <a href="/login" class="btn btn-default">Login</a>
+      <% } %>
+    </div>
+
+    <div class="container">
+      <div class="jumbotron text-center">Hello <%= user.name %></div>
+    </div>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p>Oh BB.</p>
+      </div>
+    </footer>
+  </body>
+</html>

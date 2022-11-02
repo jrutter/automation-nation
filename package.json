@@ -1,0 +1,59 @@
+{
+  "name": "automated-lp-test",
+  "version": "1.0.0",
+  "description": "A nodejs to run automated nodejs tests interacting with ghost inspector",
+  "engines": {
+    "node": "12.x"
+  },
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js -e ejs,js,css,html,jpg,png,scss"
+  },
+  "author": "Archway Partnerships, Inc.",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.0",
+    "axios": "^0.19.2",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-openid-connect": "^2.2.1",
+    "express-session": "^1.17.1",
+    "form-data": "^3.0.0",
+    "fs": "0.0.1-security",
+    "ghost-inspector": "^4.1.5",
+    "gravatar": "^1.8.1",
+    "hash-generator": "^0.1.0",
+    "json-2-csv": "^3.7.6",
+    "json2csv": "^5.0.1",
+    "jsonschema": "^1.4.0",
+    "lodash": "^4.17.19",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.0",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-sequence": "^5.3.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "node-fetch": "^3.0.0",
+    "nodejs-base64": "^1.0.3",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-auth0": "^1.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "postmark": "^2.5.5",
+    "soap": "^0.36.0",
+    "tablesort": "^5.3.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "mailosaur": "^7.1.0"
+  }
+}

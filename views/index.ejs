@@ -1,0 +1,97 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DWI - Automation Reporting</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-S8G07DD98J"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-S8G07DD98J");
+    </script>
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+      <div class="container d-flex align-items-center">
+        <h1 class="logo mr-auto">
+          <a href="/">Automation Nation</a>
+        </h1>
+
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <% if(user){ %>
+            <li><a href="/trigger" class="btn btn-default">Run GI Tests</a></li>
+            <li><a href="/reports" class="btn btn-default">Reports</a></li>
+            <li><a href="/campaigns" class="btn btn-default">Campagins</a></li>
+            <li><a href="/status" class="btn btn-default">Status</a></li>
+            <li><a href="/logout" class="btn btn-default">Log out</a></li>
+            <% } else{ %>
+            <li><a href="/login" class="btn btn-default">Login</a></li>
+
+            <% } %>
+          </ul>
+        </nav>
+        <!-- .nav-menu -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+      <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <h1 class="text-center">Welcome to <span>Automation Nation</span></h1>
+        <p class="text-center">
+          Photo by
+          <a
+            href="https://unsplash.com/@agk42?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            >Alex Knight</a
+          >
+          on
+          <a
+            href="https://unsplash.com/s/photos/automation?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            >Unsplash</a
+          >
+        </p>
+        <img
+          src="/img/alex-knight-2EJCSULRwC8-unsplash.jpg"
+          class="img-fluid rounded mx-auto"
+        />
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <footer id="footer" class="fixed-bottom">
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Automation Nation</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+  </body>
+</html>

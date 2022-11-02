@@ -1,0 +1,213 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reports | Automation Reporting</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-S8G07DD98J"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-S8G07DD98J");
+    </script>
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+      <div class="container d-flex align-items-center">
+        <h1 class="logo mr-auto">
+          <a href="/">Automation Nation</a>
+        </h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
+
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class=""><a href="/">Home</a></li>
+            <% if(user){ %>
+            <li><a href="/trigger" class="btn btn-default">Run GI Tests</a></li>
+            <li class="active">
+              <a href="/reports" class="btn btn-default active">Reports</a>
+            </li>
+            <li class="">
+              <a href="/status" class="btn btn-default active">Daily Status</a>
+            </li>
+            <li><a href="/logout" class="btn btn-default">Log out</a></li>
+            <% } else{ %>
+            <li><a href="/login" class="btn btn-default">Login</a></li>
+
+            <% } %>
+          </ul>
+        </nav>
+        <!-- .nav-menu -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <section id="about" class="about section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h3 style="margin-bottom: 10px">Recent Tests</h3>
+
+          <% if (data.length) { %>
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a
+                class="nav-link <% if (pageName === 'all') { %> active <% } %>"
+                href="/reports"
+                >All</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="
+                  nav-link
+                  <%
+                  if
+                  (pageName
+                  ===
+                  'validate')
+                  {
+                  %>
+                  active
+                  <%
+                  }
+                  %>
+                "
+                href="/reports/validate"
+                >Validate</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link <% if (pageName === 'cart') { %> active <% } %>"
+                href="/reports/cart"
+                >CART</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="
+                  nav-link
+                  <%
+                  if
+                  (pageName
+                  ===
+                  'lptest')
+                  {
+                  %>
+                  active
+                  <%
+                  }
+                  %>
+                "
+                href="/reports/lptest"
+                >LP Top 10</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="
+                  nav-link
+                  <%
+                  if
+                  (pageName
+                  ===
+                  'order')
+                  {
+                  %>
+                  active
+                  <%
+                  }
+                  %>
+                "
+                href="/reports/order"
+                >Place Order</a
+              >
+            </li>
+          </ul>
+          <br />
+
+          <table class="table table-bordered" style="background: white">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">type</th>
+                <th scope="col">env</th>
+                <th scope="col">numTests</th>
+                <th scope="col">activePages</th>
+                <th scope="col">expiredPages</th>
+                <th scope="col">failedPages</th>
+                <th scope="col">redirectPages</th>
+                <th scope="col">Started</th>
+                <th scope="col">Completed</th>
+                <th scope="col">Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% data.forEach((obj) => { %>
+              <tr>
+                <td>
+                  <a href="/reports/<%= obj.testId %>"><%= obj.testId %></a>
+                </td>
+                <td><%= obj.type %></td>
+                <td><%= obj.environment %></td>
+                <td><%= obj.numTests %></td>
+                <td><%= obj.activePages %></td>
+                <td><%= obj.expiredPages %></td>
+                <td><%= obj.failedPages %></td>
+                <td><%= obj.redirectPages %></td>
+                <td><%= moment(obj.dateTriggered).format('LLL')%></td>
+                <td><%= moment(obj.dateCompleted).format('LLL')%></td>
+                <td>
+                  <%= moment(obj.dateCompleted).diff(obj.dateTriggered,
+                  'minutes')%> minutes
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+          <% } %>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <div class="container main-content">
+      <h1>Most Recent Test Runs</h1>
+      <div class="row"></div>
+    </div>
+
+    <footer id="footer" class="fixed-bottom">
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Automation Nation</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+  </body>
+</html>

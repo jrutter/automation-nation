@@ -1,0 +1,22 @@
+﻿DWUS_BrandId,AX_RESPONSE_CODE,NAME,ATG_Start_Date,ATG_End_Date,Orders
+WSJ,2004002,WSJ -Dow Jones Employee Discount 15% Off,9/11/08,12/31/24,6
+WSJ,2004007,WSJ Replacements - Free shipping,10/6/08,12/31/30,170
+4S,2057008,4S Replacements - Free Shipping,3/24/09,12/31/30,65
+VIRGIN,2822001,Virgin Wines - Customer Service Replacements,10/6/10,2/20/30,11
+VIRGIN,3233004,VIRGIN Web - Walk up traffic Virgin Web Default - Customer Marketing,10/5/12,1/3/50,2
+4S,5361001,RC 4S Walk up - Retail Testing Volume Sep-13 None,8/22/13,1/1/30,
+4S,5361002,RC 4S Walk up - Retail Testing Volume Sep-13 None,8/22/13,1/1/30,
+4S,5361003,RC 4S Walk up - Retail Testing Volume Sep-13 None,8/22/13,1/1/30,1
+4S,5361004,RC 4S Walk up - Retail Testing Volume Sep-13 None,8/22/13,1/1/30,
+VIRGIN,5374001,VIRGIN Walk up - Retail Testing Volume Sep-13 None,8/26/13,1/1/30,
+WSJ,5431001,RC WSJ Walk up - Retail Testing Volume Nov-13 None,10/23/13,7/11/22,2
+WSJ,5431002,RC WSJ Walk up - Retail Testing Volume Nov-13 None,10/23/13,11/20/22,
+4S,5617001,SB 4S Other Unspecified May-14 None,4/17/14,12/31/30,"13,751"
+VIRGIN,5374002,ZZ VIRGIN Unknown Dummy DWI/5374001 Jun-14 None,6/10/14,1/1/30,
+VIRGIN,5374003,ZZ VIRGIN Unknown Dummy DWI/5374001 Jun-14 None,6/10/14,1/1/30,
+4S,5510001,RT 4S Other Laithwaiteswine.com Jan-17 None,12/18/16,1/15/30,14
+WSJ,5511001,RT WSJ Other WSJwine.com Feb-17 None,1/18/17,2/15/30,12
+VIRGIN,5513001,RT VIRGIN Other virginwines.com Jan-18 None,12/18/17,1/14/30,
+4S,8681001,NC 4S Other TCM Jan-18 None,12/18/17,1/14/30,2
+WSJ,1411001,MM WSJ DM WSJ CM Direct Mail Feb21,1/6/21,4/17/21,1
+WSJ,1411002,MM WSJ DM WSJ CM Direct Mail Feb21,1/6/21,4/17/21,"2,154"

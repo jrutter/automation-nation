@@ -1,0 +1,157 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reports | Automation Reporting</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-S8G07DD98J"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-S8G07DD98J");
+    </script>
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="">
+      <div class="container d-flex align-items-center">
+        <h1 class="logo mr-auto">
+          <a href="/">Automation Nation</a>
+        </h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
+
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class=""><a href="/">Home</a></li>
+            <% if(user){ %>
+            <li><a href="/trigger" class="btn btn-default">Run GI Tests</a></li>
+            <li class="">
+              <a href="/reports" class="btn btn-default active">Reports</a>
+            </li>
+            <li class="active">
+              <a href="/status" class="btn btn-default active">Daily Status</a>
+            </li>
+            <li><a href="/logout" class="btn btn-default">Log out</a></li>
+            <% } else{ %>
+            <li><a href="/login" class="btn btn-default">Login</a></li>
+
+            <% } %>
+          </ul>
+        </nav>
+        <!-- .nav-menu -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <section id="about" class="about section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h3 style="margin-bottom: 10px">Daily Status</h3>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <div class="container main-content">
+      <div class="row">
+        <div class="col">
+          <table class="table">
+            <tr>
+              <th>Suite</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="https://app.ghostinspector.com/suites/5e77662b2a247609f48361c7"
+                  >Daily Website Uptime Checks - ATG</a
+                >
+              </td>
+              <td>
+                <img
+                  src="https://api.ghostinspector.com/v1/suites/5e77662b2a247609f48361c7/status-badge"
+                  alt="Ghost Inspector Status Badge"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="https://app.ghostinspector.com/suites/5fcffbaf6ee58a7493ee604a"
+                  >Daily Website Uptime Checks - WordPress Sites / Retailer</a
+                >
+              </td>
+              <td>
+                <img
+                  src="https://api.ghostinspector.com/v1/suites/5fcffbaf6ee58a7493ee604a/status-badge
+"
+                  alt="Ghost Inspector Status Badge"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="https://app.ghostinspector.com/suites/5eb1d671feed7215cf67999f"
+                  >Privacy Policy Checks</a
+                >
+              </td>
+              <td>
+                <img
+                  src="https://api.ghostinspector.com/v1/suites/5eb1d671feed7215cf67999f/status-badge"
+                  alt="Ghost Inspector Status Badge"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a
+                  href="https://app.ghostinspector.com/suites/6090f248632a5d402b137a50"
+                  >WSJ - Compliance Tests - Winery Direct</a
+                >
+              </td>
+              <td>
+                <img
+                  src="https://api.ghostinspector.com/v1/suites/6090f248632a5d402b137a50/status-badge"
+                  alt="Ghost Inspector Status Badge"
+                />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="fixed-bottom">
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Automation Nation</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+  </body>
+</html>
